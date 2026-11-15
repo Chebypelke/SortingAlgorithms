@@ -7,19 +7,19 @@ template <typename Container>
 void Sorts::BubbleSort<Container>::Sort(Container& arr)
 {
     int n = arr.size();
-    for (auto J = 0; J < n - 1; ++J)
+    for (auto i = 0; i < n - 1; i++)
     {
-        bool F = false;
+        bool swapped = false;
 
-        for (auto I = 0; I < n - 1 - J; ++I)
+        for (auto j = 0; j < n - 1 - i; j++)
         {
-            if (arr[I] > arr [I+1])
+            if (arr[j] > arr [j + 1])
             {
-                std::swap(arr[I], arr [I+1]);
-                F = true;
+                std::swap(arr[j], arr [j + 1]);
+                swapped = true;
             }
         }
 
-        if (!F) break;
+        if (!swapped) break;
     }
 }

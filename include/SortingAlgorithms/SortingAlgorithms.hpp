@@ -15,6 +15,15 @@ namespace Sorts
         public: 
             static void Sort(Container& arr);    
     };
+    
+    template <typename Container>
+    class SelectionSort 
+    {
+        public: 
+            static void Sort(Container& arr);
+    };
 }
 
-#include "BubbleSort-inl.hpp" // IWYU pragma: keep
+#include "BubbleSort-inl.hpp"    // IWYU pragma: keep
+#include "InsertionSort-inl.hpp" // IWYU pragma: keep
+#include "SelectionSort-inl.hpp" // IWYU pragma: keep
