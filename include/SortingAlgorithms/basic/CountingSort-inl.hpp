@@ -11,7 +11,7 @@ void Sorts::basic::CountingSort<Container>::SortStable(Container& arr)
     auto k = *std::ranges::max_element(arr);
     using ValueType = typename Container::value_type;
 
-    auto count = std::vector<std::size_t>(static_cast<std::size_t>(k) + 1uz, 0uz);
+    auto count = std::vector<std::size_t>(static_cast<std::size_t>(k) + 1, 0);
     auto output = std::vector<ValueType>(n);
 
     for (auto i = 0; i < n; i++)

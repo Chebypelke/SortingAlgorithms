@@ -28,7 +28,7 @@ void Sorts::basic::CombSort<Container>::Sort(Container& arr)
                 swapped = true;
             }
 
-            ++i;
+            i++;
         }
     }
 }

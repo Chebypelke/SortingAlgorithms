@@ -7,7 +7,7 @@ template <typename Container>
 void Sorts::basic::InsertionSort<Container>::Sort(Container& arr)
 {
     auto n = arr.size();
-    
+
     for (auto idx = 1; idx < n; idx++)
     {
         auto key = arr[idx];
@@ -16,7 +16,7 @@ void Sorts::basic::InsertionSort<Container>::Sort(Container& arr)
         while (j > 0 && arr[j - 1] > key)
         {
             arr[j] = arr[j - 1];
-            --j;
+            j++;
         }
 
         arr[j] = key;
