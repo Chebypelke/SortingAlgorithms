@@ -1,12 +1,13 @@
 #pragma once
 
-#include "SortingAlgorithms.hpp"
+#include <SortingAlgorithms.hpp>
 #include <algorithm> 
 
 template <typename Container>
-void Sorts::BubbleSort<Container>::Sort(Container& arr)
+void Sorts::basic::BubbleSort<Container>::Sort(Container& arr)
 {
-    int n = arr.size();
+    auto n = arr.size();
+
     for (auto i = 0; i < n - 1; i++)
     {
         bool swapped = false;

@@ -2,28 +2,64 @@
 
 namespace Sorts
 {
-    template <typename Container>    
-    class BubbleSort 
+    namespace basic
     {
-        public: 
-            static void Sort(Container& arr);
-    };
+        template <typename Container>    
+        class BubbleSort 
+        {
+            public: 
+                static void Sort(Container& arr);
+        };
 
-    template <typename Container>    
-    class InsertionSort
+        template <typename Container>    
+        class InsertionSort
+        {
+            public: 
+                static void Sort(Container& arr);    
+        };
+        
+        template <typename Container>
+        class SelectionSort 
+        {
+            public: 
+                static void Sort(Container& arr);
+        };
+
+        template <typename Container>
+        class CombSort
+        {
+            public: 
+                static void Sort(Container& arr);
+        };
+
+        template <typename Container>
+        class CountingSort
+        {
+            public: 
+                static void SortStable(Container& arr);
+                static void SortUnstable(Container& arr);
+        };
+    }
+
+    namespace hybrid
     {
-        public: 
-            static void Sort(Container& arr);    
-    };
-    
-    template <typename Container>
-    class SelectionSort 
-    {
-        public: 
-            static void Sort(Container& arr);
-    };
+        template <typename Container>
+        class CombInsertSort
+        {
+            public:
+                static void Sort(Container& arr);
+        };
+    }
 }
 
-#include "BubbleSort-inl.hpp"    // IWYU pragma: keep
-#include "InsertionSort-inl.hpp" // IWYU pragma: keep
-#include "SelectionSort-inl.hpp" // IWYU pragma: keep
+// basic
+
+#include "basic/BubbleSort-inl.hpp"    // IWYU pragma: keep
+#include "basic/InsertionSort-inl.hpp" // IWYU pragma: keep
+#include "basic/SelectionSort-inl.hpp" // IWYU pragma: keep
+#include "basic/CombSort-inl.hpp"      // IWYU pragma: keep
+#include "basic/CountingSort-inl.hpp"  // IWYU pragma: keep
+
+// hybrid
+
+#include "hybrid/CombInsertSort-inl.hpp" // IWYU pragma: keep

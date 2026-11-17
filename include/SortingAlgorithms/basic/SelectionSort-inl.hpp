@@ -1,11 +1,11 @@
 #pragma once
 
-#include "SortingAlgorithms.hpp"
+#include <SortingAlgorithms.hpp>
 
 template <typename Container>
-void Sorts::SelectionSort<Container>::Sort(Container& arr)
+void Sorts::basic::SelectionSort<Container>::Sort(Container& arr)
 {
-    int n = arr.size();
+    auto n = arr.size();
 
     for (int i = 0; i < n - 1; i++)
     {

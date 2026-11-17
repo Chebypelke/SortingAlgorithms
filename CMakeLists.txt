@@ -23,27 +23,55 @@ block() # Libs
 endblock()
 
 block() # Testers
-    add_executable(BubbleSort 
-        src/Sorts/BubbleSort.cpp 
-    )
-    target_link_libraries(BubbleSort PRIVATE 
-        SortingAlgorithms
-        utils-lib
-    )
+    block() # basic
+        add_executable(BubbleSort 
+            src/Sorts/basic/BubbleSort.cpp 
+        )
+        target_link_libraries(BubbleSort PRIVATE 
+            SortingAlgorithms
+            utils-lib
+        )
 
-    add_executable(InsertionSort 
-        src/Sorts/InsertionSort.cpp 
-    )
-    target_link_libraries(InsertionSort PRIVATE 
-        SortingAlgorithms
-        utils-lib
-    )
+        add_executable(InsertionSort 
+            src/Sorts/basic/InsertionSort.cpp 
+        )
+        target_link_libraries(InsertionSort PRIVATE 
+            SortingAlgorithms
+            utils-lib
+        )
 
-    add_executable(SelectionSort
-        src/Sorts/SelectionSort.cpp
-    )
-    target_link_libraries(SelectionSort PRIVATE 
-        SortingAlgorithms
-        utils-lib
-    )
+        add_executable(SelectionSort
+            src/Sorts/basic/SelectionSort.cpp
+        )
+        target_link_libraries(SelectionSort PRIVATE 
+            SortingAlgorithms
+            utils-lib
+        )
+
+        add_executable(CombSort
+            src/Sorts/basic/CombSort.cpp
+        )
+        target_link_libraries(CombSort PRIVATE 
+            SortingAlgorithms
+            utils-lib
+        )
+
+        add_executable(CountingSort
+            src/Sorts/basic/CountingSort.cpp
+        )
+        target_link_libraries(CountingSort PRIVATE 
+            SortingAlgorithms
+            utils-lib
+        )
+    endblock()
+
+    block() # hybrid
+        add_executable(CombInsertSort
+            src/Sorts/hybrid/CombInsertSort.cpp 
+        )
+        target_link_libraries(CombInsertSort PRIVATE 
+            SortingAlgorithms
+            utils-lib
+        )
+    endblock()
 endblock()
