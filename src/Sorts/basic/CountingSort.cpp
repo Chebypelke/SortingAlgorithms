@@ -18,10 +18,10 @@ int main()
     std::cout << std::endl;
 
     auto start = std::chrono::high_resolution_clock::now();
-    Sorts::basic::CountingSort<decltype(vec)>::SortStable(vec);
+    Sorts::basic::CountingSort::Sort(vec);
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration<double>(end - start);
 
-    std::cout << "After counting sort(stable) (time: " << duration << "s.): ";
+    std::cout << "After counting sort(time: " << duration << "s.): ";
     VectorUtils::printVector(vec);  
 }

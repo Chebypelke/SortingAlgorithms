@@ -18,7 +18,7 @@ int main()
     std::cout << std::endl;
 
     auto start = std::chrono::high_resolution_clock::now();
-    Sorts::basic::BubbleSort<decltype(vec)>::Sort(vec);
+    Sorts::basic::BubbleSort::Sort(vec);
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration<double>(end - start);
 

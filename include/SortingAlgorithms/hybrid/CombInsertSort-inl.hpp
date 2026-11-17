@@ -25,7 +25,7 @@ void Sorts::hybrid::CombInsertSort<Container>::Sort(Container& arr)
                 std::swap(arr[i], arr[i + step]);
             }
 
-            ++i;
+            i++;
         }
     }
 

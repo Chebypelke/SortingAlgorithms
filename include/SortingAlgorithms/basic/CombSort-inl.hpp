@@ -3,10 +3,11 @@
 #include <SortingAlgorithms.hpp>
 #include <cstddef>
 
-template <typename Container>
-void Sorts::basic::CombSort<Container>::Sort(Container& arr)
+template <typename RandomIt>
+    requires std::random_access_iterator<RandomIt>
+void Sorts::basic::CombSort::Sort(RandomIt first, RandomIt last)
 {
-    auto n = arr.size();
+    auto n = last - first;
     auto step = n;
     bool swapped = false;
 
@@ -22,13 +23,19 @@ void Sorts::basic::CombSort<Container>::Sort(Container& arr)
 
         while (i + step < n)
         {
-            if (arr[i] > arr[i + step])
+            if (first[i] > first[i + step])
             {
-                std::swap(arr[i], arr[i + step]);
+                std::swap(first[i], first[i + step]);
                 swapped = true;
             }
 
             i++;
         }
     }
+}
+
+template <typename Container>
+void Sorts::basic::CombSort::Sort(Container& arr)
+{
+    Sort(arr.begin(), arr.end());
 }

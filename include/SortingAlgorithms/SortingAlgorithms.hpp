@@ -1,43 +1,67 @@
 #pragma once 
 
+#include <iterator>
+
 namespace Sorts
 {
     namespace basic
     {
-        template <typename Container>    
+        
         class BubbleSort 
         {
             public: 
+                template <typename RandomIt>
+                    requires std::random_access_iterator<RandomIt>
+                static void Sort(RandomIt first, RandomIt last);
+
+                template <typename Container>    
                 static void Sort(Container& arr);
         };
 
-        template <typename Container>    
         class InsertionSort
         {
             public: 
-                static void Sort(Container& arr);    
+                template <typename RandomIt>
+                    requires std::random_access_iterator<RandomIt>
+                static void Sort(RandomIt first, RandomIt last);
+
+                template <typename Container>    
+                static void Sort(Container& arr);
         };
         
-        template <typename Container>
         class SelectionSort 
         {
             public: 
+                template <typename RandomIt>
+                    requires std::random_access_iterator<RandomIt>
+                static void Sort(RandomIt first, RandomIt last);
+
+                template <typename Container>    
                 static void Sort(Container& arr);
         };
 
-        template <typename Container>
         class CombSort
         {
             public: 
+                template <typename RandomIt>
+                    requires std::random_access_iterator<RandomIt>
+                static void Sort(RandomIt first, RandomIt last);
+
+                template <typename Container>    
                 static void Sort(Container& arr);
         };
 
-        template <typename Container>
+        
         class CountingSort
         {
             public: 
-                static void SortStable(Container& arr);
-                static void SortUnstable(Container& arr);
+                template <typename RandomIt>
+                    requires std::random_access_iterator<RandomIt>
+                static void Sort(RandomIt first, RandomIt last);
+
+                template <typename Container>
+                static void Sort(Container& arr);
+                
         };
     }
 

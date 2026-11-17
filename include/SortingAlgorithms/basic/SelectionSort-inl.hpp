@@ -2,10 +2,11 @@
 
 #include <SortingAlgorithms.hpp>
 
-template <typename Container>
-void Sorts::basic::SelectionSort<Container>::Sort(Container& arr)
+template <typename RandomIt>
+    requires std::random_access_iterator<RandomIt>
+void Sorts::basic::SelectionSort::Sort(RandomIt first, RandomIt last)
 {
-    auto n = arr.size();
+    auto n = last - first;
 
     for (int i = 0; i < n - 1; i++)
     {
@@ -13,14 +14,20 @@ void Sorts::basic::SelectionSort<Container>::Sort(Container& arr)
         
         for (int j = i + 1; j < n; j++)
         {
-            if (arr[j] < arr [min_index])
+            if (first[j] < first [min_index])
             {
                 min_index = j;
             }
         }
         if (min_index != i)
         {
-            std::swap(arr[i], arr[min_index]);
+            std::swap(first[i], first[min_index]);
         }
     }
+}
+
+template <typename Container>
+void Sorts::basic::SelectionSort::Sort(Container& arr)
+{
+    Sort(arr.begin(), arr.end());
 }
